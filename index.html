@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Корнуэльская комната — Canvas 2D</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Корнуэльская комната (Canvas 2D)</h1>
+      </header>
+      <main>
+        <section id="view">
+          <canvas id="canvas" width="800" height="600"></canvas>
+          <div id="progress"></div>
+        </section>
+        <section id="controls">
+          <h2>Объекты</h2>
+          <div class="group">
+            <h3>Куб 1</h3>
+            <label
+              ><input type="checkbox" id="cube1-mirror" /> Зеркальный</label
+            >
+            <label
+              >Прозрачность:
+              <input
+                type="range"
+                id="cube1-alpha"
+                min="0"
+                max="1"
+                step="0.05"
+                value="0"
+            /></label>
+          </div>
+          <div class="group">
+            <h3>Куб 2</h3>
+            <label
+              ><input type="checkbox" id="cube2-mirror" /> Зеркальный</label
+            >
+            <label
+              >Прозрачность:
+              <input
+                type="range"
+                id="cube2-alpha"
+                min="0"
+                max="1"
+                step="0.05"
+                value="0"
+            /></label>
+          </div>
+          <div class="group">
+            <h3>Сфера 1</h3>
+            <label
+              ><input type="checkbox" id="sphere1-mirror" /> Зеркальная</label
+            >
+            <label
+              >Прозрачность:
+              <input
+                type="range"
+                id="sphere1-alpha"
+                min="0"
+                max="1"
+                step="0.05"
+                value="0"
+            /></label>
+          </div>
+          <div class="group">
+            <h3>Сфера 2</h3>
+            <label
+              ><input type="checkbox" id="sphere2-mirror" /> Зеркальная</label
+            >
+            <label
+              >Прозрачность:
+              <input
+                type="range"
+                id="sphere2-alpha"
+                min="0"
+                max="1"
+                step="0.05"
+                value="0"
+            /></label>
+          </div>
+
+          <h2>Стены (зеркальность)</h2>
+          <div class="group">
+            <label
+              ><input type="checkbox" id="wall-left-mirror" /> Левая
+              (красная)</label
+            >
+            <label
+              ><input type="checkbox" id="wall-right-mirror" /> Правая
+              (синяя)</label
+            >
+            <label
+              ><input type="checkbox" id="wall-back-mirror" /> Задняя</label
+            >
+            <label
+              ><input type="checkbox" id="wall-front-mirror" /> Передняя</label
+            >
+            <label><input type="checkbox" id="wall-floor-mirror" /> Пол</label>
+            <label
+              ><input type="checkbox" id="wall-ceil-mirror" /> Потолок</label
+            >
+          </div>
+
+          <h2>Освещение</h2>
+          <div class="group">
+            <p>Базовый источник света всегда включен (в центре потолка).</p>
+          </div>
+          <div class="group">
+            <label
+              ><input type="checkbox" id="light2-enabled" /> Включить второй
+              источник света</label
+            >
+            <div class="slider-row">
+              <div>Положение:</div>
+              <label
+                ><input
+                  type="radio"
+                  name="light2-pos"
+                  value="left-wall"
+                  checked
+                />
+                Центр левой стены</label
+              >
+              <label
+                ><input type="radio" name="light2-pos" value="right-wall" />
+                Центр правой стены</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="light2-pos"
+                  value="ceil-left-corner"
+                />
+                Левый дальний угол потолка</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="light2-pos"
+                  value="ceil-right-corner"
+                />
+                Правый дальний угол потолка</label
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
